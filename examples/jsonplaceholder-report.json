@@ -1,0 +1,118 @@
+{
+  "audit": {
+    "entries": [
+      {
+        "hash": "481a24f82de5bb34e7734ed97ed8e1c98b30ac5ff353e84ad9f7498a5d326fac",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-001 discover OpenAPI document",
+        "prev_hash": "GENESIS",
+        "seq": 0,
+        "status": 404,
+        "ts": "2026-11-21T03:03:09Z",
+        "url": "https://jsonplaceholder.typicode.com/openapi.json"
+      },
+      {
+        "hash": "711198894ce38015cc5799f7e2b997cc2fb5914ec6d094154e8db6a1728fd3db",
+        "kind": "note",
+        "method": "-",
+        "note": "no OpenAPI document available; surface limited to root resource",
+        "prev_hash": "481a24f82de5bb34e7734ed97ed8e1c98b30ac5ff353e84ad9f7498a5d326fac",
+        "seq": 1,
+        "status": "-",
+        "ts": "2026-11-21T03:03:09Z",
+        "url": "https://jsonplaceholder.typicode.com"
+      },
+      {
+        "hash": "02cdf9077b3ae4f76588beb32d4e9bccc80f386c65a1fa24c7598300771987c7",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-002 explain GET /",
+        "prev_hash": "711198894ce38015cc5799f7e2b997cc2fb5914ec6d094154e8db6a1728fd3db",
+        "seq": 2,
+        "status": 200,
+        "ts": "2026-11-21T03:03:10Z",
+        "url": "https://jsonplaceholder.typicode.com/"
+      },
+      {
+        "hash": "ccf8be3e8d483dea1d13f96f23239f7f7213832024d3545cb4e6eecc34de120b",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-003 explain GET / (replay)",
+        "prev_hash": "02cdf9077b3ae4f76588beb32d4e9bccc80f386c65a1fa24c7598300771987c7",
+        "seq": 3,
+        "status": 200,
+        "ts": "2026-11-21T03:03:11Z",
+        "url": "https://jsonplaceholder.typicode.com/"
+      },
+      {
+        "hash": "136c92f5d145947799ece396c4f65e635ab5f4a2ad5031f847609a49bc8a7aa3",
+        "kind": "note",
+        "method": "-",
+        "note": "run complete: {'verified': 0, 'single-observation': 2, 'refused': 0}",
+        "prev_hash": "ccf8be3e8d483dea1d13f96f23239f7f7213832024d3545cb4e6eecc34de120b",
+        "seq": 4,
+        "status": "-",
+        "ts": "2026-11-21T03:03:11Z",
+        "url": "https://jsonplaceholder.typicode.com"
+      }
+    ],
+    "head_hash": "136c92f5d145947799ece396c4f65e635ab5f4a2ad5031f847609a49bc8a7aa3",
+    "key_fingerprint": "a418f2855d4625c0e2552316f8352b688110f24c5452f6e39a9120cf52e71272",
+    "meta": {
+      "attestation": "Demo run against JSONPlaceholder, a public fake-data API published for testing (labeled demo target).",
+      "method_statement": "Clean-room method: the target was examined only through the HTTP requests recorded in this log. No source code, binaries, credentials beyond those the operator supplied, or circumvention techniques were used.",
+      "started_at": "2026-11-21T03:03:09Z",
+      "target": "https://jsonplaceholder.typicode.com",
+      "tool": "foriscope",
+      "version": "0.1.0"
+    },
+    "signature": "856278ffe6f2e7b814e25558fa211c8155c9e2b30c15588889177175da18adb4",
+    "signature_scheme": "HMAC-SHA256 over head_hash; chain = SHA-256 over canonical JSON entries"
+  },
+  "claims": [
+    {
+      "endpoint": "/",
+      "id": "C-001",
+      "probe_ids": [
+        "P-002",
+        "P-003"
+      ],
+      "reason_code": "",
+      "status": "single-observation",
+      "text": "GET / returns HTTP 200."
+    },
+    {
+      "endpoint": "/",
+      "id": "C-002",
+      "probe_ids": [
+        "P-002",
+        "P-003"
+      ],
+      "reason_code": "",
+      "status": "single-observation",
+      "text": "GET / responds with Content-Type 'text/html; charset=UTF-8'."
+    }
+  ],
+  "counts": {
+    "refused": 0,
+    "single-observation": 2,
+    "verified": 0
+  },
+  "coverage_ledger": [
+    {
+      "method": "GET",
+      "note": "",
+      "path": "/",
+      "probe_ids": [
+        "P-002",
+        "P-003"
+      ],
+      "probed": true
+    }
+  ],
+  "spec_source": "none (root resource only)",
+  "target": "https://jsonplaceholder.typicode.com",
+  "tool": "foriscope",
+  "version": "0.1.0"
+}

@@ -1,0 +1,596 @@
+{
+  "audit": {
+    "entries": [
+      {
+        "hash": "c28150acf37f8b858314a8b230a827cd9e6637e832bf211cfbfc82496899650c",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-001 discover OpenAPI document",
+        "prev_hash": "GENESIS",
+        "seq": 0,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/openapi.json"
+      },
+      {
+        "hash": "0c0e451231ff05505b48a57abc9740fa9519463ba3c4fe64b24dde682215aaf6",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-002 explain GET /",
+        "prev_hash": "c28150acf37f8b858314a8b230a827cd9e6637e832bf211cfbfc82496899650c",
+        "seq": 1,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/"
+      },
+      {
+        "hash": "e1c00a1edb27eb79422a2da05db128db6b4ab1c384e28d5f150db3f9e7e3143e",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-003 explain GET / (replay)",
+        "prev_hash": "0c0e451231ff05505b48a57abc9740fa9519463ba3c4fe64b24dde682215aaf6",
+        "seq": 2,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/"
+      },
+      {
+        "hash": "6f7d7520b23a87b651211e228a0caee68c81dca39e91d570f62a458ce5b8db46",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-004 explain GET /admin/stats",
+        "prev_hash": "e1c00a1edb27eb79422a2da05db128db6b4ab1c384e28d5f150db3f9e7e3143e",
+        "seq": 3,
+        "status": 401,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/admin/stats"
+      },
+      {
+        "hash": "74f93318434e7d40953724c5aaa98eb246fa4621ecc0959a239b3138450d9139",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-005 explain GET /admin/stats (replay)",
+        "prev_hash": "6f7d7520b23a87b651211e228a0caee68c81dca39e91d570f62a458ce5b8db46",
+        "seq": 4,
+        "status": 401,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/admin/stats"
+      },
+      {
+        "hash": "4e5ce5b6c82da49ce5582980a7fcf9f46d7c96f217df2c12778f4d283d246f4c",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-006 explain GET /items",
+        "prev_hash": "74f93318434e7d40953724c5aaa98eb246fa4621ecc0959a239b3138450d9139",
+        "seq": 5,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items"
+      },
+      {
+        "hash": "c279c96666d2274b2a19e0feb4d3a862a537766b06ce133bea63ec47e31ab3f7",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-007 explain GET /items (replay)",
+        "prev_hash": "4e5ce5b6c82da49ce5582980a7fcf9f46d7c96f217df2c12778f4d283d246f4c",
+        "seq": 6,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items"
+      },
+      {
+        "hash": "443e2b0d11783502831b563b8c87402861e84e8a178811924a19fb2180bdbb76",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-008 pagination behavior of GET /items",
+        "prev_hash": "c279c96666d2274b2a19e0feb4d3a862a537766b06ce133bea63ec47e31ab3f7",
+        "seq": 7,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items?limit=2"
+      },
+      {
+        "hash": "e1444282be8ba1fbe69354f2d620ce023ff185897e0b243ee84cf99d910aab08",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-009 pagination behavior of GET /items (replay)",
+        "prev_hash": "443e2b0d11783502831b563b8c87402861e84e8a178811924a19fb2180bdbb76",
+        "seq": 8,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items?limit=2"
+      },
+      {
+        "hash": "2061abcbed6dd597559230907f31f9b3b2b100a0d08e2574eb46b828fbe9ad86",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-010 explain GET /items/{id}",
+        "prev_hash": "e1444282be8ba1fbe69354f2d620ce023ff185897e0b243ee84cf99d910aab08",
+        "seq": 9,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items/1"
+      },
+      {
+        "hash": "17cd000bd0bf17151b5fef50f498a4495655b612b86337166b96f27932dd9ac9",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-011 explain GET /items/{id} (replay)",
+        "prev_hash": "2061abcbed6dd597559230907f31f9b3b2b100a0d08e2574eb46b828fbe9ad86",
+        "seq": 10,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items/1"
+      },
+      {
+        "hash": "de323c1ccad5daef60baaf4b22b363795bb0419a6b7c2db05046e3b28d006511",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-012 error behavior of GET /items/{id}",
+        "prev_hash": "17cd000bd0bf17151b5fef50f498a4495655b612b86337166b96f27932dd9ac9",
+        "seq": 11,
+        "status": 404,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items/999999999"
+      },
+      {
+        "hash": "5f8a1b2d8152744622f209de33d61cff95ab1dea8f3d2bd6318482d2e8fc93c5",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-013 error behavior of GET /items/{id} (replay)",
+        "prev_hash": "de323c1ccad5daef60baaf4b22b363795bb0419a6b7c2db05046e3b28d006511",
+        "seq": 12,
+        "status": 404,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items/999999999"
+      },
+      {
+        "hash": "8bc7255e2f2755e57108b47fdb1556a4910aefc512f7d84876caf0916063aac8",
+        "kind": "probe",
+        "method": "POST",
+        "note": "P-014 create probe of POST /items",
+        "prev_hash": "5f8a1b2d8152744622f209de33d61cff95ab1dea8f3d2bd6318482d2e8fc93c5",
+        "seq": 13,
+        "status": 201,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items"
+      },
+      {
+        "hash": "a6c0d5b546833cd0b91da2f495eab719863560dc9885deaed1646f388feef51d",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-015 fetch created resource from POST /items",
+        "prev_hash": "8bc7255e2f2755e57108b47fdb1556a4910aefc512f7d84876caf0916063aac8",
+        "seq": 14,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items/6"
+      },
+      {
+        "hash": "b483fe313c248668e57e592e8b23290360a3782ab684abc0fc262a26463c89a6",
+        "kind": "probe",
+        "method": "POST",
+        "note": "P-016 create probe of POST /items",
+        "prev_hash": "a6c0d5b546833cd0b91da2f495eab719863560dc9885deaed1646f388feef51d",
+        "seq": 15,
+        "status": 201,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items"
+      },
+      {
+        "hash": "5127e81635bc514be17f154cc1a352bd86ef8623bf8bbf7877bad7cfbf775432",
+        "kind": "probe",
+        "method": "GET",
+        "note": "P-017 fetch created resource from POST /items",
+        "prev_hash": "b483fe313c248668e57e592e8b23290360a3782ab684abc0fc262a26463c89a6",
+        "seq": 16,
+        "status": 200,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items/7"
+      },
+      {
+        "hash": "91c5dd4c3493218d1635e92130539291b717d7e867f9d55d9a481cbc3c6a6978",
+        "kind": "probe",
+        "method": "POST",
+        "note": "P-018 invalid-body probe of POST /items",
+        "prev_hash": "5127e81635bc514be17f154cc1a352bd86ef8623bf8bbf7877bad7cfbf775432",
+        "seq": 17,
+        "status": 400,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items"
+      },
+      {
+        "hash": "22817f61f2a6e8bc38fc19c67abc53a7254c542baeeecf944d1523f62cfd5640",
+        "kind": "probe",
+        "method": "POST",
+        "note": "P-019 invalid-body probe of POST /items (replay)",
+        "prev_hash": "91c5dd4c3493218d1635e92130539291b717d7e867f9d55d9a481cbc3c6a6978",
+        "seq": 18,
+        "status": 400,
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601/items"
+      },
+      {
+        "hash": "27326fed153a3660fe6c500c52a3214e9a092df5820336530cde69f3a41dc3bb",
+        "kind": "note",
+        "method": "-",
+        "note": "run complete: {'verified': 23, 'single-observation': 0, 'refused': 4}",
+        "prev_hash": "22817f61f2a6e8bc38fc19c67abc53a7254c542baeeecf944d1523f62cfd5640",
+        "seq": 19,
+        "status": "-",
+        "ts": "2026-11-21T03:03:08Z",
+        "url": "http://127.0.0.1:34601"
+      }
+    ],
+    "head_hash": "27326fed153a3660fe6c500c52a3214e9a092df5820336530cde69f3a41dc3bb",
+    "key_fingerprint": "4c322de7c6e07167857067932dfb69595959240bffbaf13656133a4cd74fc1da",
+    "meta": {
+      "attestation": "Demo run against the bundled local fixture API (operator's own system).",
+      "method_statement": "Clean-room method: the target was examined only through the HTTP requests recorded in this log. No source code, binaries, credentials beyond those the operator supplied, or circumvention techniques were used.",
+      "started_at": "2026-11-21T03:03:08Z",
+      "target": "http://127.0.0.1:34601",
+      "tool": "foriscope",
+      "version": "0.1.0"
+    },
+    "signature": "c64360bb450de668a9f043ccc5b3d09de9727cd4a2fd47f04b722ac035fabc4f",
+    "signature_scheme": "HMAC-SHA256 over head_hash; chain = SHA-256 over canonical JSON entries"
+  },
+  "claims": [
+    {
+      "endpoint": "/",
+      "id": "C-001",
+      "probe_ids": [
+        "P-002",
+        "P-003"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET / returns HTTP 200."
+    },
+    {
+      "endpoint": "/",
+      "id": "C-002",
+      "probe_ids": [
+        "P-002",
+        "P-003"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET / responds with Content-Type 'application/json'."
+    },
+    {
+      "endpoint": "/",
+      "id": "C-003",
+      "probe_ids": [
+        "P-002",
+        "P-003"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET / returns a JSON object with keys: endpoints, service."
+    },
+    {
+      "endpoint": "/admin/stats",
+      "id": "C-004",
+      "probe_ids": [
+        "P-004",
+        "P-005"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /admin/stats returns HTTP 401."
+    },
+    {
+      "endpoint": "/admin/stats",
+      "id": "C-005",
+      "probe_ids": [
+        "P-004",
+        "P-005"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /admin/stats responds with Content-Type 'application/json'."
+    },
+    {
+      "endpoint": "/admin/stats",
+      "id": "C-006",
+      "probe_ids": [
+        "P-004",
+        "P-005"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /admin/stats returns a JSON object with keys: error."
+    },
+    {
+      "endpoint": "/admin/stats",
+      "id": "C-007",
+      "probe_ids": [
+        "P-004",
+        "P-005"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /admin/stats refuses unauthenticated access with HTTP 401."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-008",
+      "probe_ids": [
+        "P-006",
+        "P-007"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /items returns HTTP 200."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-009",
+      "probe_ids": [
+        "P-006",
+        "P-007"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /items responds with Content-Type 'application/json'."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-010",
+      "probe_ids": [
+        "P-006",
+        "P-007"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /items returns a JSON array of 5 element(s)."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-011",
+      "probe_ids": [
+        "P-006",
+        "P-007"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "Array elements of GET /items are JSON objects with keys: id, name, price, stock."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-012",
+      "probe_ids": [
+        "P-006",
+        "P-007"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "In GET /items responses, element field 'id' has JSON type integer."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-013",
+      "probe_ids": [
+        "P-006",
+        "P-007"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "In GET /items responses, element field 'name' has JSON type string."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-014",
+      "probe_ids": [
+        "P-006",
+        "P-007"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "In GET /items responses, element field 'price' has JSON type number."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-015",
+      "probe_ids": [
+        "P-006",
+        "P-007"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "In GET /items responses, element field 'stock' has JSON type integer."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-016",
+      "probe_ids": [
+        "P-008",
+        "P-009"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "The 'limit' query parameter of GET /items controls page size: limit=2 returned 2 of the 5 elements returned without it."
+    },
+    {
+      "endpoint": "/items/{id}",
+      "id": "C-017",
+      "probe_ids": [
+        "P-010",
+        "P-011"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /items/{id} returns HTTP 200."
+    },
+    {
+      "endpoint": "/items/{id}",
+      "id": "C-018",
+      "probe_ids": [
+        "P-010",
+        "P-011"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /items/{id} responds with Content-Type 'application/json'."
+    },
+    {
+      "endpoint": "/items/{id}",
+      "id": "C-019",
+      "probe_ids": [
+        "P-010",
+        "P-011"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /items/{id} returns a JSON object with keys: id, name, price, stock."
+    },
+    {
+      "endpoint": "/items/{id}",
+      "id": "C-020",
+      "probe_ids": [
+        "P-012",
+        "P-013"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "GET /items/999999999 (a non-existent resource) returns HTTP 404."
+    },
+    {
+      "endpoint": "/items/{id}",
+      "id": "C-021",
+      "probe_ids": [
+        "P-012",
+        "P-013"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "The error response of GET /items/{id} is a JSON object containing an 'error' key."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-022",
+      "probe_ids": [
+        "P-014",
+        "P-015",
+        "P-016",
+        "P-017"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "POST /items with a valid JSON body returns HTTP 201 and creates a resource that can then be fetched with GET /items/{id}."
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-023",
+      "probe_ids": [
+        "P-018",
+        "P-019"
+      ],
+      "reason_code": "",
+      "status": "verified",
+      "text": "POST /items with a body missing its required fields returns HTTP 400."
+    },
+    {
+      "endpoint": "/admin/stats",
+      "id": "C-024",
+      "probe_ids": [],
+      "reason_code": "AUTH_CONTEXT_UNAVAILABLE",
+      "status": "refused",
+      "text": "Documented claim about GET /admin/stats: \"Returns aggregate revenue totals computed from every order in the database.\""
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-025",
+      "probe_ids": [],
+      "reason_code": "INTERNAL_STATE_NOT_OBSERVABLE",
+      "status": "refused",
+      "text": "Documented claim about GET /items: \"Items are ranked by an internal popularity score that is maintained server-side and never exposed.\""
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-026",
+      "probe_ids": [],
+      "reason_code": "UNIT_SEMANTICS_NOT_PROBEABLE",
+      "status": "refused",
+      "text": "Documented claim about GET /items: \"Prices are amounts in the store's local currency.\""
+    },
+    {
+      "endpoint": "/items",
+      "id": "C-027",
+      "probe_ids": [],
+      "reason_code": "TEMPORAL_BEHAVIOR_NOT_PROBEABLE",
+      "status": "refused",
+      "text": "Documented claim about GET /items: \"Inventory counts are synchronised with the warehouse every hour.\""
+    }
+  ],
+  "counts": {
+    "refused": 4,
+    "single-observation": 0,
+    "verified": 23
+  },
+  "coverage_ledger": [
+    {
+      "method": "GET",
+      "note": "",
+      "path": "/",
+      "probe_ids": [
+        "P-002",
+        "P-003"
+      ],
+      "probed": true
+    },
+    {
+      "method": "GET",
+      "note": "",
+      "path": "/admin/stats",
+      "probe_ids": [
+        "P-004",
+        "P-005"
+      ],
+      "probed": true
+    },
+    {
+      "method": "GET",
+      "note": "",
+      "path": "/items",
+      "probe_ids": [
+        "P-006",
+        "P-007",
+        "P-008",
+        "P-009"
+      ],
+      "probed": true
+    },
+    {
+      "method": "GET",
+      "note": "",
+      "path": "/items/{id}",
+      "probe_ids": [
+        "P-010",
+        "P-011",
+        "P-012",
+        "P-013"
+      ],
+      "probed": true
+    },
+    {
+      "method": "POST",
+      "note": "",
+      "path": "/items",
+      "probe_ids": [
+        "P-014",
+        "P-015",
+        "P-016",
+        "P-017",
+        "P-018",
+        "P-019"
+      ],
+      "probed": true
+    }
+  ],
+  "spec_source": "fetched /openapi.json",
+  "target": "http://127.0.0.1:34601",
+  "tool": "foriscope",
+  "version": "0.1.0"
+}
